@@ -1,0 +1,11 @@
+{
+  "name": "connectoauth2",
+  "version": "1.0.0",
+  "description": "The Connect OAuth2 Package allows developers to integrate Connect Authentication into their apps",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Amin Ouled",
+  "license": "ISC"
+}
