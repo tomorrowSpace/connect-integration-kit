@@ -1,15 +1,16 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.ActivitiesSDK = void 0;
-function ActivitiesSDK(clientId) {
-    function returnHello() {
-        return `You used the clientId ${clientId}`;
+const api_1 = require("./api");
+const utils_1 = require("./utils");
+(0, api_1.ConnectAPI)('').establish_connection();
+function IntegrationTools(clientId) {
+    function requestAuthentication() {
+        (0, utils_1.fetchData)('https://connect.tspacemeta.com/internal/registerCard', { method: 'GET' }).then(data => {
+            return data;
+        });
     }
-    ;
     return {
-        returnHello,
+        requestAuthentication,
     };
 }
-exports.ActivitiesSDK = ActivitiesSDK;
-module.exports = ActivitiesSDK;
+module.exports = IntegrationTools;
 //# sourceMappingURL=index.js.map

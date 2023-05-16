@@ -1,5 +1,3 @@
-import fetch from 'fetch';
-
 interface FetchDataOptions {
     method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
     headers?: { [key: string]: string };

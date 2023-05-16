@@ -1,11 +1,24 @@
 {
-  "name": "connectoauth2",
+  "name": "connect-integration-tools",
   "version": "1.0.0",
-  "description": "The Connect OAuth2 Package allows developers to integrate Connect Authentication into their apps",
+  "description": "The Connect Integration Tools allow developers to integrate Connect functionalities into their apps",
   "main": "test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx jest"
   },
   "author": "Amin Ouled",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.21.5",
+    "@types/jest": "^29.5.1",
+    "@types/node": "^20.1.6",
+    "babel-jest": "^29.5.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0"
+  },
+  "dependencies": {
+    "fetch": "^1.1.0",
+    "node-fetch": "^3.3.1"
+  },
+  "type": "commonjs"
 }

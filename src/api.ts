@@ -1,9 +1,6 @@
-const endpoint_url = 'https://api.tspacemeta.com';
-const ws_endpoint_url = "wss://api.tspacemeta.com";
-
-function ActivitiesAPI(authToken: string) {
+function ConnectAPI(authToken: string) {
     function establish_connection() {
-        return "Yes"
+        // Coming soon!
     }
 
     return {
@@ -11,4 +8,4 @@ function ActivitiesAPI(authToken: string) {
     }
 }
 
-export {ActivitiesAPI};
+export {ConnectAPI};

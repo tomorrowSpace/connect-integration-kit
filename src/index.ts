@@ -1,15 +1,16 @@
-import {ActivitiesAPI} from './api';
+import {ConnectAPI} from './api';
+import {fetchData} from './utils'
 
-ActivitiesAPI('hi').establish_connection();
+ConnectAPI('').establish_connection();
 
-export function ActivitiesSDK(clientId: string) {
-    function returnHello() : string {
-        return `You used the clientId ${clientId}`
-    };
+function IntegrationTools(clientId: string) {
+    function requestAuthentication(): any {
+             
+    }
 
     return {
-        returnHello,
-    }
+        requestAuthentication,
+    };
 }
 
-module.exports = ActivitiesSDK;
+export = IntegrationTools;
