@@ -1,7 +1,7 @@
 {
-  "name": "connect-integration-tools",
+  "name": "connect-integration-kit",
   "version": "1.0.0",
-  "description": "The Connect Integration Tools allow developers to integrate Connect functionalities into their apps",
+  "description": "The Connect Integration kit allow developers to integrate Connect functionalities into their apps",
   "main": "test.js",
   "scripts": {
     "test": "npx jest"

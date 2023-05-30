@@ -5,7 +5,7 @@ ConnectAPI('').establish_connection();
 
 function IntegrationTools(clientId: string) {
     function requestAuthentication(): any {
-             
+        
     }
 
     return {

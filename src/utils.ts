@@ -4,13 +4,26 @@ interface FetchDataOptions {
     body?: any;
 }
 
-async function fetchData<T>(url: string, options?: FetchDataOptions): Promise<T> {
-    const response = await fetch(url, options);
-    if (!response.ok) {
-        throw new Error(`oh noooo, there was an error fetching data from ${url}!`);
+interface FetchDataResult<T> {
+    data?: T;
+    error?: Error;
+  }
+  
+  async function fetchData<T>(url: string, options?: FetchDataOptions): Promise<FetchDataResult<T>> {
+    try {
+      const response = await fetch(url, options);
+  
+      if (!response.ok) {
+        const errorText = await response.text();
+        return { error: new Error(`Failed to fetch data from ${url}. Server response: ${errorText}`) };
+      }
+  
+      const data = await response.json();
+      return { data };
+    } catch (error) {
+      return { error: new Error(`Failed to fetch data from ${url}. Error: ${error.message}`) };
     }
-    const data = await response.json();
-    return data as T;
-}
+  }
+  
 
 export { fetchData };
