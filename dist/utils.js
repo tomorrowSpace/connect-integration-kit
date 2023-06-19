@@ -12,13 +12,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.fetchData = void 0;
 function fetchData(url, options) {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch(url, options);
-        if (!response.ok) {
-            throw new Error(`oh noooo, there was an error fetching data from ${url}!`);
+        try {
+            const response = yield fetch(url, options);
+            if (!response.ok) {
+                const errorText = yield response.text();
+                return { error: new Error(`Failed to fetch data from ${url}. Server response: ${errorText}`) };
+            }
+            const data = yield response.json();
+            return { data };
         }
-        const data = yield response.json();
-        console.log("successful request, heres the response", response.json());
-        return data;
+        catch (error) {
+            return { error: new Error(`Failed to fetch data from ${url}. Error: ${error.message}`) };
+        }
     });
 }
 exports.fetchData = fetchData;
